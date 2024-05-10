@@ -64,7 +64,7 @@ const Project = () => {
                     <div className={styles.inner}>
                         <p className={styles.fullname}>{project.fullname}</p>
                         <div className={styles.layout}>
-                            {project.images.map((img, i) => (
+                            {project.images?.map((img, i) => (
                                 <div
                                     className={styles.picture}
                                     key={i}
