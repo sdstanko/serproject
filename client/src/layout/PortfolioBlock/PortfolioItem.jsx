@@ -13,7 +13,8 @@ const PortfolioItem = ({ id, blockId }) => {
         setItem(project);
     };
 
-    const deleteProject = async () => {
+    const deleteProject = async (e) => {
+        e.stopPropagation()
         if (window.confirm('Хотите удалить проект?')) {
             await projectAPI.delete(id, { data: { blockId: blockId } });
             setItem(null);
@@ -39,7 +40,7 @@ const PortfolioItem = ({ id, blockId }) => {
                         <div className={styles.label}>
                             {item?.name}
                             <button
-                                onClick={() => deleteProject()}
+                                onClick={(e) => deleteProject(e)}
                                 className={[styles.btn, styles.delete_btn].join(' ')}
                             >
                                 Удалить

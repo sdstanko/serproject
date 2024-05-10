@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Portfolio = () => {
     const [data, setData] = useState();
-    const navigate = useNavigate();
 
     const getData = async () => {
         const fetchedData = await blockAPI.getAll();
@@ -54,7 +53,6 @@ const Portfolio = () => {
         if (response._id) {
             setData(data.filter((block) => block._id != response._id));
         }
-        navigate('/portfolio')
     };
 
     const { openMenu, setOpenMenu } = useContext(MenuContext);
