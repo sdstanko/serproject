@@ -34,7 +34,7 @@ const Portfolio = () => {
         if (!title) return;
         const response = await blockAPI.update(id, { title: title });
         if (response._id) {
-            const newData = data.map((block) =>
+            const newData = data?.map((block) =>
                 block._id === response._id ? { ...block, title: title } : block,
             );
 
