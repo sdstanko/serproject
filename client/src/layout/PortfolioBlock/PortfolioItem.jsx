@@ -32,7 +32,7 @@ const PortfolioItem = ({ id, blockId }) => {
                         <div className={styles.photo}>
                             <img
                                 className={styles.img}
-                                src={`http://5.187.2.171//api/${item?.images?.[0]}`}
+                                src={`http://5.187.2.171/api/${item?.images?.[0]}`}
                                 alt=""
                             />
                         </div>

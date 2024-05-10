@@ -71,7 +71,7 @@ const Project = () => {
                                     onClick={() => openPopup(i)}
                                 >
                                     <img
-                                        src={`http://5.187.2.171/${img}`}
+                                        src={`http://5.187.2.171/api/${img}`}
                                         className={styles.image}
                                     />
                                 </div>
