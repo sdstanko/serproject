@@ -62,7 +62,7 @@ const Portfolio = () => {
                 Добавить категорию
             </button>
             {data &&
-                data.map((block, i) => (
+                data?.map((block, i) => (
                     <PortfolioBlock
                         block={block}
                         editBlock={editBlock}
