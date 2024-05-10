@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-const baseUrl = 'http://localhost:4000/api/';
+const baseUrl = 'http://5.187.2.171/api';
 
 export class Base {
     constructor(endpoint) {
