@@ -7,9 +7,11 @@ import Button from '../../components/Button';
 import blockAPI from '../../services/blockAPI';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Portfolio = () => {
     const [data, setData] = useState();
+    const navigate = useNavigate();
 
     const getData = async () => {
         const fetchedData = await blockAPI.getAll();
@@ -22,7 +24,7 @@ const Portfolio = () => {
 
     const createBlock = async () => {
         const title = prompt('Введите название категории', '');
-        if (!title) return
+        if (!title) return;
         const response = await blockAPI.create({ title: title });
         if (response._id) {
             setData([...data, response]);
@@ -46,12 +48,13 @@ const Portfolio = () => {
         const confirm = window.confirm(
             'Вы уверены что хотите удалить категорию? Все проекты также будут удалены',
         );
-        if (!confirm) return
-        
+        if (!confirm) return;
+
         const response = await blockAPI.delete(id);
         if (response._id) {
             setData(data.filter((block) => block._id != response._id));
         }
+        navigate('/portfolio')
     };
 
     const { openMenu, setOpenMenu } = useContext(MenuContext);
