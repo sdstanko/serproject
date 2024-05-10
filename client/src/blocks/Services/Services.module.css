@@ -1,0 +1,60 @@
+.row {
+    display: flex;
+    gap: 40px;
+}
+
+.card {
+    text-align: center;
+    flex: 0 1 360px;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+.label {
+    margin-top: 18px;
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.55;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .row {
+        gap: 20px;
+    }
+
+    .img {
+        margin-bottom: 10px;
+    }
+
+    .label {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .card {
+        flex: 0 1 auto;
+    }
+}

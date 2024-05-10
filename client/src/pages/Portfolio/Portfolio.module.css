@@ -1,0 +1,16 @@
+.portfolio {
+	min-height: 100vh;
+	padding-top: 130px;
+	background-color: #d1d1d1;
+}
+
+.add_btn {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 15px;
+	border: 1px black solid;
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	margin-bottom: 50px;
+}

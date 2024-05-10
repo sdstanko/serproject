@@ -1,0 +1,112 @@
+.project {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+.inner {
+}
+.fullname {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-right: -15px;
+}
+
+.picture {
+    flex: 0 0 calc(50% - 15px);
+    position: relative;
+    padding-bottom: 33%;
+    cursor: pointer;
+}
+
+.image {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 11;
+}
+
+.popup_open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup_body {
+    min-height: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 10px 30px;
+}
+
+.popup_content {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    max-width: 85%;
+    padding: 30px 100px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.popup_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.popup_arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.popup_arrow_left {
+    left: 50px;
+}
+
+.popup_arrow_right {
+    right: 50px;
+}
+
+.popup_picture {
+    position: relative;
+    padding-bottom: 56%;
+    height: 100%;
+}
+
+.popup_img {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

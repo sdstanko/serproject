@@ -1,0 +1,16 @@
+.app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.lock {
+	overflow: hidden;
+}
+
+.container {
+	max-width: 1230px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}

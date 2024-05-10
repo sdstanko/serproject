@@ -1,0 +1,84 @@
+.row {
+    display: flex;
+    gap: 40px;
+}
+
+.card {
+    flex: 0 1 260px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #050505;
+    background-color: #ffffff;
+    border-radius: 9px;
+    padding: 40px 30px;
+}
+
+.card:last-child .title {
+    margin-bottom: 12px;
+}
+
+.card:last-child .line:nth-child(9) {
+    font-style: italic;
+}
+
+.body {
+    flex: 1 1 auto;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 22px;
+    line-height: 1.35;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.price {
+    font-size: 38px;
+    line-height: 1.23;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.list {
+    list-style: none;
+}
+
+.line {
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1024px) {
+    .row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .price {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .line {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
