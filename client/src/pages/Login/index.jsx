@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './Login.module.css';
 import userAPI from '../../services/userAPI.js';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../App';
 
 const Login = () => {
@@ -30,11 +30,11 @@ const Login = () => {
                 >
                     <label className={styles.label} htmlFor="username">
                         Логин
-                        <input id="username" name="username" className={styles.input} type="text" />
+                        <input id="username" name="username" className={styles.input} type="text" required/>
                     </label>
                     <label className={styles.label} htmlFor="password">
                         Пароль
-                        <input id="password" name="password" className={styles.input} type="text" />
+                        <input id="password" name="password" className={styles.input} type="password" required/>
                     </label>
 
                     <button className={styles.btn} type="submit">

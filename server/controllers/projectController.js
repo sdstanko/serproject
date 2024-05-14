@@ -1,14 +1,7 @@
-import ApiError from '../error/ApiError.js';
 import { ProjectModel } from '../models/Project.js';
-import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
-import webp from 'webp-converter';
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 class ProjectController {
     constructor() {
@@ -29,7 +22,7 @@ class ProjectController {
                 images.push(result[0].destinationPath.split('/')[1]);
                 fs.unlinkSync(result[0].sourcePath);
             } else {
-                images.push(file.filename)
+                images.push(file.filename);
             }
         }
 
@@ -52,7 +45,9 @@ class ProjectController {
         const { blockId } = req.body;
         const projectId = req.params.id;
         const response = await this.model.delete(projectId, blockId);
-        console.log(response);
+        response.images.forEach((img) => {
+            fs.unlinkSync(`static/${img}`);
+        });
         return res.json(response);
     };
 }

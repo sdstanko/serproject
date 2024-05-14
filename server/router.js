@@ -16,7 +16,6 @@ router.post('/project', authMiddleware, multerMiddleware, projectController.crea
 router.get('/project/:id', projectController.findById);
 router.delete('/project/:id', authMiddleware, projectController.delete);
 
-router.post('/user/registration', userController.registration);
 router.post('/user/login', userController.login);
 router.get('/user/auth', authMiddleware, userController.check);
 
