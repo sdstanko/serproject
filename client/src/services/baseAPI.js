@@ -31,18 +31,27 @@ export class Base {
         return data;
     }
 
-    async create(data) {
-        const { data: responseData } = await axios.post(this.url, data);
+    async create(data, token) {
+        const config = {
+            headers: { Authorization: `Bearer ${token}` },
+        };
+        const { data: responseData } = await axios.post(this.url, data, config);
         return responseData;
     }
 
-    async update(id, data) {
-        const { data: responseData } = await axios.patch(this.url + '/' + id, data);
+    async update(id, data, token) {
+        const config = {
+            headers: { Authorization: `Bearer ${token}` },
+        };
+        const { data: responseData } = await axios.patch(this.url + '/' + id, data, config);
         return responseData;
     }
 
-    async delete(id, data) {
-        const { data: responseData } = await axios.delete(this.url + '/' + id, data);
+    async delete(id, token) {
+        const config = {
+            headers: { Authorization: `Bearer ${token}` },
+        };
+        const { data: responseData } = await axios.delete(this.url + '/' + id, config);
         return responseData;
     }
 }

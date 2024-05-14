@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
 
 const storage = multer.diskStorage({
-    destination: (_, __, cb) => {
+    destination: (_, file, cb) => {
         const path = 'static';
         if (!fs.existsSync(path)) {
             fs.mkdirSync(path);

@@ -2,10 +2,12 @@ import React from 'react';
 import styles from './Add.module.css';
 import projectAPI from '../../services/projectAPI.js';
 import { useParams, useNavigate } from 'react-router-dom';
+import { RequestFunctions } from '../../requestFunctions';
 
 const Add = () => {
     const { id } = useParams();
     const navigate = useNavigate();
+    const requestFunctions = new RequestFunctions(null, null);
 
     const submitFunc = async (e) => {
         e.preventDefault();
@@ -26,7 +28,8 @@ const Add = () => {
             }
         }
 
-        const response = await projectAPI.create(sendForm);
+        const token = await requestFunctions.checkAuth();
+        const response = await projectAPI.create(sendForm, token);
         if (response._id) {
             navigate('/portfolio');
         }
@@ -52,7 +55,7 @@ const Add = () => {
                         <input type="file" accept="image/*" multiple name={`images`} id="" />
                     </label>
 
-                    <button className={styles.btn} type="submit" onClick={() => console.log()}>
+                    <button className={styles.btn} type="submit">
                         Загрузить проект
                     </button>
                 </form>

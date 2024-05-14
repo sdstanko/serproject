@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styles from './PortfolioBlock.module.css';
 import projectAPI from '../../services/projectAPI.js';
+import userAPI from '../../services/userAPI';
 import { useNavigate } from 'react-router-dom';
+import { RequestFunctions } from '../../requestFunctions';
 
-const PortfolioItem = ({ id, blockId }) => {
+const PortfolioItem = ({ id, blockId, isAuth }) => {
     const navigate = useNavigate();
+    const requestFunctions = new RequestFunctions(null, null);
 
     const [item, setItem] = useState();
 
@@ -14,9 +17,18 @@ const PortfolioItem = ({ id, blockId }) => {
     };
 
     const deleteProject = async (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
+        // const token = localStorage.getItem('token');
+        // if (!token) {
+        //     alert('Вы не авторизованы/срок авторизации прошел');
+        //     return;
+        // }
+        // await userAPI.check(token);
+        const token = await requestFunctions.checkAuth();
+
         if (window.confirm('Хотите удалить проект?')) {
-            await projectAPI.delete(id, { data: { blockId: blockId } });
+            const data = { blockId: blockId };
+            await projectAPI.delete(id, data, token);
             setItem(null);
         }
     };
@@ -39,12 +51,14 @@ const PortfolioItem = ({ id, blockId }) => {
                         </div>
                         <div className={styles.label}>
                             {item?.name}
-                            <button
-                                onClick={(e) => deleteProject(e)}
-                                className={[styles.btn, styles.delete_btn].join(' ')}
-                            >
-                                Удалить
-                            </button>
+                            {isAuth && (
+                                <button
+                                    onClick={(e) => deleteProject(e)}
+                                    className={[styles.btn, styles.delete_btn].join(' ')}
+                                >
+                                    Удалить
+                                </button>
+                            )}
                         </div>
                     </div>
                 </>
