@@ -5,7 +5,7 @@ export const contactData = [
     },
     {
         icon: 'instagram.svg',
-        link: 'https://instagram.com/',
+        link: 'https://www.instagram.com/ser_project_',
     },
     {
         icon: 'telegram.svg',

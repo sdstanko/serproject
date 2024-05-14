@@ -37,7 +37,7 @@ const Header = ({ openMenu, setOpenMenu, refsArr }) => {
                     {
                         <li className={[styles.item, styles.logo].join(' ')}>
                             <Link to="/" className={styles.link}>
-                                ser_project_
+                                Рассвет 72
                             </Link>
                         </li>
                     }
