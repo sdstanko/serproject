@@ -45,7 +45,7 @@ const PortfolioItem = ({ id, blockId, isAuth }) => {
                         <div className={styles.photo}>
                             <img
                                 className={styles.img}
-                                src={`http://5.187.2.171/api/${item?.images?.[0]}`}
+                                src={`https://rassvet72.com/api/${item?.images?.[0]}`}
                                 alt=""
                             />
                         </div>

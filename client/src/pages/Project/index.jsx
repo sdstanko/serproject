@@ -71,7 +71,7 @@ const Project = () => {
                                     onClick={() => openPopup(i)}
                                 >
                                     <img
-                                        src={`http://5.187.2.171/api/${img}`}
+                                        src={`https://rassvet72.com/api/${img}`}
                                         className={styles.image}
                                     />
                                 </div>
@@ -103,7 +103,7 @@ const Project = () => {
                             <div className={styles.popup_picture}>
                                 <img
                                     className={styles.popup_img}
-                                    src={`http://5.187.2.171/api/${project?.images?.[popupImg]}`}
+                                    src={`https://rassvet72.com/api/${project?.images?.[popupImg]}`}
                                     alt=""
                                 />
                             </div>

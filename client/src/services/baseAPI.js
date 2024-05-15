@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-const baseUrl = 'http://5.187.2.171/api';
+const baseUrl = 'https://rassvet72.com/api/';
 
 export class Base {
     constructor(endpoint) {
