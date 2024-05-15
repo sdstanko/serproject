@@ -2,21 +2,21 @@ import React, { useContext } from 'react';
 import styles from './Button.module.css';
 import { ContactRefContext } from '../../pages/Main';
 
-const Button = ({ label }) => {
+const Button = ({ label, scroll }) => {
     const contactRef = useContext(ContactRefContext);
 
-    return (
-        <a
-            onClick={() =>
-                contactRef?.current.scrollIntoView({
-                    behavior: 'smooth',
-                })
-            }
+    const smoothScroll = () => {
+        if (scroll) {
+            contactRef?.current.scrollIntoView({
+                behavior: 'smooth',
+            });
+        }
+    };
 
-            className={styles.button}
-        >
+    return (
+        <button onClick={() => smoothScroll()} className={styles.button}>
             {label}
-        </a>
+        </button>
     );
 };
 

@@ -16,7 +16,7 @@ const PriceCard = ({ card }) => {
                     ))}
                 </ul>
             </div>
-            <Button label={'Заказать проект'} />
+            <Button label={'Заказать проект'} scroll={true} />
         </div>
     );
 };

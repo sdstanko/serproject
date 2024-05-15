@@ -15,11 +15,17 @@ class User extends Base {
         const config = {
             headers: { Authorization: `Bearer ${token}` },
         };
-        const { data: responseData } = await axios.get(this.url + '/auth', config);
-        if (responseData.token) {
-            localStorage.setItem('token', responseData.token);
+
+        if (token) {
+            const { data: responseData } = await axios.get(this.url + '/auth', config);
+
+            if (responseData.token) {
+                localStorage.setItem('token', responseData.token);
+                return responseData;
+            }
+        } else {
+            return { message: 'Не авторизован' };
         }
-        return responseData;
     }
 }
 

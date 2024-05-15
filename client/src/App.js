@@ -40,7 +40,7 @@ function App() {
     const initCheckAuth = async () => {
         const token = localStorage.getItem('token');
         const response = await userAPI.check(token);
-        if (response.token) {
+        if (response?.token) {
             setIsAuth(true);
         } else {
             setIsAuth(false);

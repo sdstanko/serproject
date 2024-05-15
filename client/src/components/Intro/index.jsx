@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../../layout/Container';
 import Button from '../Button';
 import styles from './Intro.module.css';
@@ -16,8 +17,10 @@ const Intro = () => {
                                 современном стиле
                             </p>
                             <div className={styles.buttons}>
-                                <Button label={'Заказать проект'} />
-                                <Button label={'Посмотреть портфолио'} />
+                                <Button label={'Заказать проект'} scroll={true} />
+                                <Link to="portfolio">
+                                    <Button label={'Посмотреть портфолио'} scroll={false} />
+                                </Link>
                             </div>
                         </div>
                     </Container>
