@@ -17,6 +17,7 @@ router.get('/project/:id', projectController.findById);
 router.delete('/project/:id', authMiddleware, projectController.delete);
 
 router.post('/user/login', userController.login);
+router.post('/user/registration', userController.registration);
 router.get('/user/auth', authMiddleware, userController.check);
 
 export default router;

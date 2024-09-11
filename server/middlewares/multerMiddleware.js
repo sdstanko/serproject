@@ -21,4 +21,4 @@ const upload = multer({
     storage,
 });
 
-export default upload.array('images', 10);
+export default upload.array('images', 30);
